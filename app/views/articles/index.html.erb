@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-3">
+    <h2>Categories</h2>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>Category 1</td>
+        </tr>
+        <tr>
+          <td>Category 2</td>
+        </tr>
+        <tr>
+          <td>Category 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-9">
+    <h2>Articles</h2>
+    <%= render 'articles_table', articles: @articles %>
+    <%= link_to 'Create a new Article', new_article_path %>
+  </div>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.body %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
