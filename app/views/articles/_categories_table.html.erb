@@ -1,0 +1,15 @@
+<h2>Categories</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% categories.each do |category| %>
+      <tr>
+        <td><%= category.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

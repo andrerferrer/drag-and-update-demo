@@ -1,31 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="row">
+
   <div class="col-3">
-    <h2>Categories</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @categories.each do |category| %>
-          <tr>
-            <td><%= category.title %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+
+    <%= render 'categories_table', categories: @categories %>
+
   </div>
+
   <div class="col-9">
-    <h2>Articles</h2>
+
     <%= render 'articles_table', articles: @articles %>
     <%= link_to 'Create a new Article', new_article_path %>
+
   </div>
 
 </div>
-
-<br>
-
