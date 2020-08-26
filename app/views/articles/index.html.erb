@@ -5,16 +5,17 @@
   <div class="col-3">
     <h2>Categories</h2>
     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr>
-          <td>Category 1</td>
-        </tr>
-        <tr>
-          <td>Category 2</td>
-        </tr>
-        <tr>
-          <td>Category 3</td>
-        </tr>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.title %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
